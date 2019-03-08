@@ -36,6 +36,7 @@
     3. `mockMvc.perform(requestBuilder).andReturn()`执行请求并返回结果
 
 #### 3. Swagger2自动生成Api文档
+- Swagger常用注解说明：https://www.jianshu.com/p/12f4394462d5
 - Swagger详细文档：`github`地址：https://github.com/SpringForAll/spring-boot-starter-swagger
 - 项目中使用Swagger2
     1. 引入依赖
