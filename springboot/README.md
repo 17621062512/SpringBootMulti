@@ -54,3 +54,35 @@
     ```
     2. 项目启动类同级目录下创建`Swagger2`类，配置Swagger参数
     3. 在`Controller`接口方法上添加相关注解`@ApiOperation`,`@ApiImplicitParam`等
+    
+#### 4. spring-boot-JPA
+- 使用Mysql数据库 
+    - 引入依赖 
+    ```html
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>8.0.13</version>
+      </dependency>
+    ```
+    1. `aplication.properties`配置mysql连接属性
+    ```properties
+       spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+       #设置时区,否则可能报错
+       spring.datasource.url=jdbc:mysql://192.168.100.105:3306/test?serverTimezone=GMT%2b8
+       spring.datasource.username=root
+       spring.datasource.password=123321
+     ```
+    2. 给用户实体类`User`添加相关注解
+    3. 用户实体类有`@Id`注解的成员属性需加上策略`@GeneratedValue(strategy = GenerationType.IDENTITY)`,
+        具体策略需根据选用数据库做相应改动（本项目使用Mysql,所以为`IDENTITY`）
+    4. 添加接口`UserRepository` 实现 `JpaRepository<T,ID>`
+        jpaRepository提供了部分封装好的基本查询方法，实现自定义查询语句可以加注解`@Query("")`。
+        查询语句默认使用HQL语法，也可以用`@Query(value = "", nativeQuery = true)`使用原生SQL查询语法。
+        实现删改操作需添加`@Modify,@Transactional`注解，其中不加`@Transactional`可能会报事务管理异常或
+        无法正常删改数据。
+   

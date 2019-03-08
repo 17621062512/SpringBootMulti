@@ -1,11 +1,18 @@
 package com.leemon.springboot.pojo;
 
+import javax.persistence.*;
+
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column
     private String name;
 
+    @Column
     private int age;
 
     public User() {
