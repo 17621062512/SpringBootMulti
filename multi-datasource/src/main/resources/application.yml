@@ -1,0 +1,14 @@
+#*.yml配置文件有严格的缩进 每个键值对在键后面必须有一个空格
+spring:
+  datasource:
+    primary:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.100.105:3306/test?serverTimezone=GMT%2b8
+      username: root
+      password: 123321
+
+    secondary:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.100.105:3306/test_2?serverTimezone=GMT%2b8
+      username: root
+      password: 123321
