@@ -1,5 +1,6 @@
 #SpringBoot
-####spring-boot多环境配置
+
+#### 1. spring-boot多环境配置
 - 主配置文件 application.properties配置
 `spring.profiles.active=@active@`。
 选择环境时，使用通配符 `@@`，`active`为所选环境，对应`pom.xml`文件中的
@@ -26,8 +27,10 @@
     </filters>
   </build>
  ```
-####spring-boot 测试类测试Controller
-- 使用`org.springframework.test.web.servlet.*`相关类`MockMvc`等测试Controller
+#### 2. spring-boot 测试类测试Controller
+- 详细内容查看`UserControllerTest`相关代码
+- 使用`org.springframework.test.web.servlet.*`包下的相关类`MockMvc`等测试Controller
     1. 初始化`UserController`，方法：`MockMvcBuilders.standaloneSetup(UserController.class).build();`
       可以使用`@Before`注解，在调用其他方法之前先初始化该方法。
-    2. 
+    2. ` MockMvcRequestBuilders.get("{param}");`构建请求。`{param}`为`Controller`的接口地址
+    3. `mockMvc.perform(requestBuilder).andReturn()`执行请求并返回结果
