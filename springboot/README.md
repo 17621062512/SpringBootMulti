@@ -34,3 +34,22 @@
       可以使用`@Before`注解，在调用其他方法之前先初始化该方法。
     2. ` MockMvcRequestBuilders.get("{param}");`构建请求。`{param}`为`Controller`的接口地址
     3. `mockMvc.perform(requestBuilder).andReturn()`执行请求并返回结果
+
+#### 3. Swagger2自动生成Api文档
+- Swagger详细文档：`github`地址：https://github.com/SpringForAll/spring-boot-starter-swagger
+- 项目中使用Swagger2
+    1. 引入依赖
+    ```html
+     <dependency>
+          <groupId>io.springfox</groupId>
+          <artifactId>springfox-swagger2</artifactId>
+          <version>2.7.0</version>
+     </dependency>
+     <dependency>
+          <groupId>io.springfox</groupId>
+          <artifactId>springfox-swagger-ui</artifactId>
+          <version>2.7.0</version>
+     </dependency>
+    ```
+    2. 项目启动类同级目录下创建`Swagger2`类，配置Swagger参数
+    3. 在`Controller`接口方法上添加相关注解`@ApiOperation`,`@ApiImplicitParam`等
