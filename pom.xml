@@ -12,6 +12,7 @@
     <modules>
         <module>springboot</module>
         <module>multi-datasource</module>
+        <module>multi-datasource-jpa</module>
     </modules>
 
     <parent>
