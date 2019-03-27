@@ -13,6 +13,7 @@
         <module>springboot</module>
         <module>multi-datasource</module>
         <module>multi-datasource-jpa</module>
+        <module>spring-boot-redis</module>
     </modules>
 
     <parent>
