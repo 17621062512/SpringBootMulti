@@ -2,11 +2,15 @@
 - [(官方)application.properties常用样板配置](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
 - [(翻译)application.properties常用样板配置](https://blog.csdn.net/qq_28929589/article/details/79439795)
 
+###SpringBoot推荐阅读
+- [spring boot源码文档指南](http://blog.didispace.com/books/spring-boot-reference/)
+
 #项目子代码顺序
 - [spring-boot](springboot/README.md)
 - [multi-datasource](multi-datasource/README.md)
 - [multi-datasource-jpa](multi-datasource-jpa/README.md)
 - [spring-boot-redis](spring-boot-redis/README.md)
+- [spring-boot-mongodb](spring-boot-mongodb/README.md)
 
 
 #常用工具类
