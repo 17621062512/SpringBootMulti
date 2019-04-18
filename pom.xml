@@ -15,6 +15,7 @@
         <module>multi-datasource-jpa</module>
         <module>spring-boot-redis</module>
         <module>spring-boot-mongodb</module>
+        <module>mybatis</module>
     </modules>
 
     <parent>

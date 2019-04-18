@@ -5,12 +5,16 @@
 ###SpringBoot推荐阅读
 - [spring boot源码文档指南](http://blog.didispace.com/books/spring-boot-reference/)
 
+###深入理解mybatis
+- [深入理解mybatis原理](https://blog.csdn.net/u010349169/column/info/mybatis-principle)
+
 #项目子代码顺序
 - [spring-boot](springboot/README.md)
 - [multi-datasource](multi-datasource/README.md)
 - [multi-datasource-jpa](multi-datasource-jpa/README.md)
 - [spring-boot-redis](spring-boot-redis/README.md)
 - [spring-boot-mongodb](spring-boot-mongodb/README.md)
+- [mybatis](mybatis/README.md)
 
 
 #常用工具类
