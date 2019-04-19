@@ -9,6 +9,12 @@
 - [深入理解mybatis原理](https://blog.csdn.net/u010349169/column/info/mybatis-principle)
 
 #项目子代码顺序
+
+### 0.其他内容
+- [使用@Async实现异步调用 (未完成)]
+- [邮件发送](mail/README.md)
+
+### 1. 多环境项目创建+数据访问部分
 - [spring-boot](springboot/README.md)
 - [multi-datasource](multi-datasource/README.md)
 - [multi-datasource-jpa](multi-datasource-jpa/README.md)
@@ -16,6 +22,21 @@
 - [spring-boot-mongodb](spring-boot-mongodb/README.md)
 - [mybatis](mybatis/README.md)
 
+#### 1.1 深入理解spring-data-jpa
+
+### 2. 事务管理
+- [springboot事务管理](http://blog.didispace.com/springboottransactional/)
+
+### 3. 日志管理
+- [未完成]
+
+### 4. 缓存支持
+- [未完成]
+
+### 4. 安全管理
+- [未完成]
+
+### 5. 监控管理
 
 #常用工具类
 - 编码转换工具类 :`StringEscapeUtils`;包：`org.apache.commons.lang.*`,
