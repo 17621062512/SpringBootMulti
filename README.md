@@ -11,7 +11,12 @@
 #项目子代码顺序
 
 ### 0.其他内容
-- [使用@Async实现异步调用 (未完成)]
+- [使用@Async实现异步调用 (线程池)(未完成)]()  
+    相关文章：  
+    [1.Spring中的线程池ThreadPoolTaskExecutor介绍](https://www.cnblogs.com/duanxz/p/5050227.html)  
+    [2.springboot线程池的使用和扩展](https://www.cnblogs.com/pejsidney/p/9001875.html)  
+    [3.Spring Boot线程池的使用心得](https://blog.csdn.net/m0_37701381/article/details/81072774)  
+    [4.SpringBoot 自定义线程池](https://www.jianshu.com/p/832f2b162450)  
 - [邮件发送](mail/README.md)
 
 ### 1. 多环境项目创建+数据访问部分
