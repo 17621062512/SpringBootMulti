@@ -3,6 +3,7 @@ package com.leemon.asynchronous.config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.annotation.SchedulingConfigurer;
@@ -11,10 +12,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 import org.springframework.util.concurrent.ListenableFuture;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
 /**
  * @author limenglong
@@ -35,7 +33,7 @@ public class AsyncTaskExecutePoolConfig implements AsyncConfigurer, SchedulingCo
 
     }
 
-    private ThreadPoolTaskScheduler taskScheduler(){
+    private ThreadPoolTaskScheduler taskScheduler() {
         ThreadPoolTaskScheduler taskScheduler = new ThreadPoolTaskScheduler();
         //设置定时任务线程池大小
         taskScheduler.setPoolSize(10);
@@ -72,7 +70,7 @@ public class AsyncTaskExecutePoolConfig implements AsyncConfigurer, SchedulingCo
         //线程池的前缀 自定义线程名
         executor.setThreadNamePrefix("线程--");
         //等待所有任务完成后，再销毁其他的Bean组件，然后关闭线程池
-//        executor.setWaitForTasksToCompleteOnShutdown(true);
+        executor.setWaitForTasksToCompleteOnShutdown(true);
         //设置线程池中任务的等待时间，如果超时还没有销毁就强制销毁，以确保程序能关闭，否则将一直阻塞；
 //        executor.setAwaitTerminationSeconds(60);
         return executor;
@@ -91,6 +89,10 @@ public class AsyncTaskExecutePoolConfig implements AsyncConfigurer, SchedulingCo
     //自定义VisibleThreadPoolTaskExecutor继承ThreadPoolTaskExecutor
     private class VisibleThreadPoolTaskExecutor extends ThreadPoolTaskExecutor {
 
+        {
+            initialize();
+        }
+
         //展示线程池信息
         private void showThreadPoolInfo(String prefix) {
             ThreadPoolExecutor executor = getThreadPoolExecutor();
@@ -106,7 +108,6 @@ public class AsyncTaskExecutePoolConfig implements AsyncConfigurer, SchedulingCo
                     executor.getActiveCount(),
                     executor.getQueue().size());
         }
-
 
         @Override
         public void execute(Runnable task) {
@@ -143,5 +144,6 @@ public class AsyncTaskExecutePoolConfig implements AsyncConfigurer, SchedulingCo
             showThreadPoolInfo("do submitListenable(Callable<T> task)");
             return super.submitListenable(task);
         }
+
     }
 }

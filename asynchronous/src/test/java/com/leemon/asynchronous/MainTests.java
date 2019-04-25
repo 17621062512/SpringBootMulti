@@ -130,11 +130,18 @@ public class MainTests {
         }
 
         futures.forEach(future -> {
-            future.isDone();
+            try {
+                future.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
         });
         long end = System.currentTimeMillis();
 
         System.out.println("总耗时：" + (end - begin) + "毫秒");
+
 
     }
 }

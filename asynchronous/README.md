@@ -33,11 +33,16 @@
     [Java8新特性整理之CompletableFuture(多线程取结果鬼记得几种方案)](https://blog.csdn.net/u011726984/article/details/79320004)  
     [CompletableFuture 使用详解](https://www.jianshu.com/p/6bac52527ca4)
 
-5. 自定义线程池拓展  
-    相关类：(未完成)  
+5. 自定义线程池拓展 (注：测试代码时，把`ThreadPoolConfig`配置相关的代码注释掉，否则会产生冲突)  
+    相关类：(`AsyncTaskExecutePoolConfig`，`AsyncTaskFour.java`)  
     1. 目的：整合异步定时任务配置和线程池配置
     2. 使用自定义线程池重写`Spring`默认的线程池  
         2.1 与第三节的对比，上面的线程池使用的时候总是需要在`@Async`  
         注解后面加上自定义的线程池标识`@Async("myExecutor")`,  
         重写默认线程池之后只需要添加`@Async`注解就可以了  
+        2.2 定义`ThreadPoolTaskExecutor`子类`VisibleThreadPoolTaskExecutor`，  
+        需要执行非静态代码块，初始化`ThreadPoolExecutor`,封装方法`showThreadPoolInfo`  
+        展示线程池状态（总任务数，缓冲队列任务数，正在执行的任务数，已完成的任务数）
+        2.3 重写线程池配置`getAsyncExecutor`。
     3. 并行执行定时任务配置  
+        3.1 重写定时任务配置`configureTasks`，配置定时任务线程池。
