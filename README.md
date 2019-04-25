@@ -1,3 +1,7 @@
+- ###[spring boot全系列博客推荐](https://blog.lqdev.cn/categories/)
+
+- [本项目内容源自Spring4All](http://www.spring4all.com)
+
 ## SpringBoot
 - [(官方)application.properties常用样板配置](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
 - [(翻译)application.properties常用样板配置](https://blog.csdn.net/qq_28929589/article/details/79439795)
@@ -10,8 +14,9 @@
 
 #项目子代码顺序
 
-### 0.其他内容
-- [使用@Async实现异步调用 (线程池)(未完成)]()  
+### 0.其他内容 (此部分不分顺序，可单独查看)
+- []
+- [使用@Async实现异步调用 (线程池配置)](asynchronous/README.md)  
     相关文章：  
     [1.Spring中的线程池ThreadPoolTaskExecutor介绍](https://www.cnblogs.com/duanxz/p/5050227.html)  
     [2.springboot线程池的使用和扩展](https://www.cnblogs.com/pejsidney/p/9001875.html)  
@@ -32,14 +37,21 @@
 ### 2. 事务管理
 - [springboot事务管理](http://blog.didispace.com/springboottransactional/)
 
-### 3. 日志管理
-- [未完成]
+### 3. 日志管理  
+推荐文章：
+- [默认日志的配置](http://blog.didispace.com/springbootlog/)
+- [使用log4j记录日志](http://blog.didispace.com/springbootlog4j/)
+- [对log4j进行多环境不同日志级别的控制](http://blog.didispace.com/springbootlog4jmuilt/)
+- [使用AOP统一处理Web请求日志](http://blog.didispace.com/springbootaoplog/)
+- [使用log4j记录日志到MongoDB](http://blog.didispace.com/springbootlog4jmongodb/)
+- [Spring Boot 1.5.x新特性：动态修改日志级别](http://blog.didispace.com/spring-boot-1-5-x-feature-1/)]
+
 
 ### 4. 缓存支持
 - [未完成]
 
 ### 4. 安全管理
-- [未完成]
+- [Spring Security全系列](http://www.spring4all.com/article/428)
 
 ### 5. 监控管理
 
