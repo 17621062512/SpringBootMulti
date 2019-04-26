@@ -18,6 +18,7 @@
         <module>mybatis</module>
         <module>mail</module>
         <module>asynchronous</module>
+        <module>security-1</module>
     </modules>
 
     <parent>
