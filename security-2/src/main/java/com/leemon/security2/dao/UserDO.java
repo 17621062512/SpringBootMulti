@@ -10,7 +10,7 @@ import javax.persistence.*;
  * @desc
  **/
 @Entity
-@Table(name = "user")
+@Table(name = "userdo")
 @Data
 public class UserDO {
 

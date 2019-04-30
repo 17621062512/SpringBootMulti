@@ -1,24 +1,32 @@
 package com.leemon.security2.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author limenglong
  * @create 2019-04-26 16:14
  * @desc
  **/
+@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    final DbUserDetailsService dbUserDetailsService;
+
+    @Autowired
+    public WebSecurityConfig(DbUserDetailsService dbUserDetailsService) {
+        this.dbUserDetailsService = dbUserDetailsService;
+    }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-//        auth.inMemoryAuthentication().withUser("user").
-//                password(encoder.encode("123")).roles("USER");
-        auth.userDetailsService("");
+       auth.userDetailsService(dbUserDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Override
@@ -35,5 +43,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 antMatchers("/user/**").hasAuthority("USER").
                 and().formLogin().loginPage("/login").defaultSuccessUrl("/user").
                 and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
+
+
     }
+
+    @Bean
+    protected PasswordEncoder passwordEncoder(){
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
+
 }
