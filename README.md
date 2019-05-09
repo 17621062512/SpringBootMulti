@@ -48,7 +48,7 @@
 
 
 ### 4. 缓存支持
-- [未完成]
+- [cache](cache/README.md)
 
 ### 4. 安全管理
 - [Spring Security全系列](http://www.spring4all.com/article/428)
