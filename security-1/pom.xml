@@ -6,7 +6,6 @@
         <groupId>com.leemon</groupId>
         <artifactId>Spring-Boot-Multi</artifactId>
         <version>V1.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.leemon</groupId>
     <artifactId>security-1</artifactId>
